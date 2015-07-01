@@ -1,0 +1,321 @@
+camera cam1
+{
+  pixeldim  800 600
+  worlddim  8 6
+  viewpoint 4 3 4
+}
+
+material see_thru
+{
+   diffuse 5 5 0
+   ambient 1 1 0
+   specular .3
+   transparency 0.6
+}
+
+material white
+{
+   diffuse 5 5 5
+   ambient 2 2 2
+}
+
+material green
+{
+   diffuse 0  5 0
+   ambient 0  2 0
+}
+
+material yellow
+{
+   diffuse 5 5 0
+   ambient 1 1 0
+}
+
+material blue
+{
+   diffuse  0 0 8
+   specular .3
+   shininess 250.0
+}
+
+material gray
+{
+   diffuse 6 6 6
+}
+
+material charcoal
+{
+   diffuse .6 0 0
+   ambient .6 1 1
+}
+
+material darkred
+{
+	diffuse 8 2 0
+	ambient .6 1 1
+}
+
+light pinkfront
+{
+   emissivity 6 5 5
+   location 10 8 4
+}
+
+light cyanfront
+{
+   emissivity 4 6 5
+   location -2 0  4
+}
+
+
+light center_red
+{
+   location 4 8 -2
+   emissivity 5 1 1
+}
+
+light left_blue
+{
+   location 2 8 0
+   emissivity 1 1 5
+}
+
+light right_green
+{
+   location 6 8 0
+   emissivity 1 5 1
+}
+
+texture brick
+{
+	filename brick8.ppm
+}
+
+texture oak
+{
+	filename oak.ppm
+}
+
+texture cartoon
+{
+	filename cartoon.ppm
+}
+
+texture painting
+{
+	filename painting.ppm
+}
+
+texture personalimg
+{
+	filename mymodel.ppm
+}
+
+tiled_plane floor
+{
+   material charcoal
+   point    0 -1 0
+   normal   0 1 0
+
+   dimensions 1 1
+   xdir       1 0 1
+   altmaterial gray
+}
+
+
+texplane left
+{
+   material darkred
+   normal 2.5 0 1
+   point  -5 -1 -3
+   xdir 1 0 0
+   dimensions 30 15
+   texname brick
+   mode 1
+}
+
+texplane middle
+{
+   material darkred
+   normal 0 0 1
+   point  -4 -1 -8
+   xdir 1 0 0
+   dimensions 40 40
+   texname brick
+   mode 1
+}
+
+texplane right
+{
+   material darkred
+   normal -2.5 0 1
+   point  11 -1 -8
+   xdir 1 0 0
+   dimensions 90 15
+   texname brick
+   mode 1
+}
+
+fplane door
+{
+	material charcoal
+	normal 0 0 1
+	point 6 -2 -7.95
+	xdir 1 0 0
+	dimensions 3 6
+}
+
+texplane doorframe
+{
+	material white
+	normal 0 0 1
+	point 5.8 -2 -7.99
+	xdir 1 0 0
+	dimensions 3.4 6.2
+	texname oak
+	mode 1
+}
+
+texplane mymodel
+{
+	material white
+	normal 0 0 1
+	point 6 5 -7.95
+	xdir 1 0 0
+	dimensions 2.7 2
+	texname personalimg
+	mode 0
+}
+
+sphere doorhandle
+{
+	material yellow
+	center 6.5 1.33 -7.98
+	radius .2
+}
+
+fplane table
+{
+	material charcoal
+	normal 0 1 .2
+	point 0 0 -7
+	xdir 1 0 0 
+	dimensions 1.5 1.5
+}
+
+fplane frontleftleg
+{
+	material charcoal
+	normal 0 0 1
+	point .05 -1 -7
+	xdir 1 0 0
+	dimensions .1 1
+}
+
+fplane frontrightleg
+{
+	material charcoal
+	normal 0 0 1
+	point 1.4 -1 -7
+	xdir 1 0 0
+	dimensions .1 1
+}
+
+fplane backleftleg
+{
+	material charcoal
+	normal 0 0 1
+	point .2 -1 -7.9
+	xdir 1 0 0
+	dimensions .08 1
+}
+
+fplane backrightleg
+{
+	material charcoal
+	normal 0 0 1
+	point 1.48 -.95 -7.9
+	xdir 1 0 0
+	dimensions .05 1.15
+}
+
+sphere glassjar
+{
+	material blue
+	center .8 .8 -7.5
+	radius .75
+}
+
+
+fplane frame
+{
+   material charcoal
+   normal 2.5 0 1
+   point  -4.3 3 -4.5
+   xdir 1 0 0
+   dimensions 2 2
+}
+
+texplane tv
+{
+   material white
+   normal 2.5 0 1
+   point  -4 3.15 -4.49
+   xdir 1 0 0
+   dimensions 1.5 1.5
+   texname cartoon
+   mode 0
+}
+
+fplane backleftleg
+{
+	material charcoal
+	normal 0 0 1
+	point -2.2 -1 -7
+	xdir 1 0 0
+	dimensions .1 8
+}
+
+sphere lamp
+{
+	material see_thru
+	center -2.2 7 -7
+	radius .5
+}
+
+sphere bottomlamp
+{
+	material charcoal
+	center -2.2 -1 -6.99
+	radius .4
+}
+
+spotlight lamplight
+{
+	location -2.2 7 0
+   emissivity 10 10 10
+   theta  12
+   point 0 0 -4
+}
+
+texplane window
+{
+	material white
+	normal 0 0 1
+	point 0.025 3.95 -7.98
+	xdir 1 0 0
+	dimensions 4 3
+	texname painting
+	mode 0
+}
+
+texplane windowframe
+{
+	material white
+	normal 0 0 1
+	point -.2 3.75 -7.99
+	xdir 1 0 0
+	dimensions 4.4 3.4
+	texname oak
+	mode 1
+}

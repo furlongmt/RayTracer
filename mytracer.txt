@@ -1,0 +1,10 @@
+Things that work in my image:
+
+	1) Tiled Plane (Floor of room)
+	2) Textured Planes (TV, paintings, etc)
+	3) Finite Plane (Frame for TV, door, etc)
+	4) Spotlight (On left side of floor by table)
+	5) Specular Reflection (Sphere on table, etc)
+	6) Specular Glint (Sphere on table)
+	7) Anti-aliasing (All)
+	8) Diffuse lighting with shadows (Multiple lights, shadows from table and lamp)
